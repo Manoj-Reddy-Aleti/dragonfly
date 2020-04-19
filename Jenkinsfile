@@ -11,20 +11,16 @@ node {
     }
     
     stage('Build Docker Image'){
-        sh 'docker build -t manojreddyaleti/my-testing-app:1.0.0 .'
+        sh 'docker build -p 8085:8085 -t manojreddyaleti/my-testing-app:${BUILD_NUMBER}.'
     }
     
     stage('Push Docker Image'){
        
     withCredentials([string(credentialsId: 'DockerHubPassword', variable: 'DockerHubPassword')]) {
     sh "docker login docker.io -u manojreddyaleti -p ${DockerHubPassword}"
-    
     }
 
-    sh 'docker push manojreddyaleti/my-testing-app:1.0.0'
-        
-        
-        
+    sh 'docker push manojreddyaleti/my-testing-app:${BUILD_NUMBER}'
     }
     
 }
