@@ -11,7 +11,7 @@ node {
     }
     
     stage('Build Docker Image'){
-        sh 'docker build -t manojreddyaleti/my-testing-app:${BUILD_NUMBER}.'
+        sh 'docker build -t manojreddyaleti/my-testing-app:${BUILD_NUMBER} .'
     }
     
     stage('Push Docker Image'){
