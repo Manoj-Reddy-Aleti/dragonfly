@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dragonflyapp
+  lables:
+    app: dragonflyapp
+spec:
+  containers:
+  - name: dragonflyapp
+    image: manojreddyaleti/my-testing-app:${BUILD_NUMBER}
+    ports:
+      - containerPort: 8085
+  imagePullSecrets:
+  - name: dragonflyapp
