@@ -33,9 +33,9 @@ node {
 
             script{
                 try{
-                    sh "ssh -o StrictHostKeyChecking=no tkma2w6@35.224.131.12 kubeclt apply -f ."
+                    sh "ssh -o StrictHostKeyChecking=no tkma2w6@35.224.131.12 kubectl apply -f ."
                 }catch(error){
-                    sh "ssh -o StrictHostKeyChecking=no tkma2w6@35.224.131.12 kubeclt create -f ."
+                    sh "ssh -o StrictHostKeyChecking=no tkma2w6@35.224.131.12 kubectl create -f ."
                 }
             }
 
