@@ -29,7 +29,7 @@ node {
             withCredentials([string(credentialsId: 'DockerHubPassword', variable: 'DockerHub')]) {
                   sh "ssh kubectl create secret docker-registry dragonflyapp --docker-server=https://index.docker.io/v1/ \
                   --docker-username=manojreddyaleti --docker-password=${DockerHub} --docker-email=amanojreddy18@gmail.com"
-                  }
+            }
 
             script{
                 try{
@@ -37,8 +37,9 @@ node {
                 }catch(error){
                     sh "ssh tkma2w6@35.224.131.12 kubeclt create -f ."
                 }
-        }
+            }
 
+        }
     }
 
     
