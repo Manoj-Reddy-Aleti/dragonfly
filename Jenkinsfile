@@ -23,6 +23,10 @@ node {
     }
 
     stage('Run Container in K8s'){
+
+        sh "chmod +x changeTag.sh"
+        sh "./changeTag.sh"
+
         sshagent(['GCP-EKS-AWS']) {
             sh "scp -o StrictHostKeyChecking=no DragonflyLB.yaml Dragonfly_pods.yaml tkma2w6@35.224.131.12:/home/tkma2w6/"
 

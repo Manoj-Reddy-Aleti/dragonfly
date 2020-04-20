@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: dragonflyapp
-    image: manojreddyaleti/my-testing-app:${BUILD_NUMBER}
+    image: manojreddyaleti/my-testing-app:JenkinsBuildNo
     ports:
       - containerPort: 8085
   imagePullSecrets:
